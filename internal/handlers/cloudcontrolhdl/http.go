@@ -19,11 +19,13 @@ func (hdl *HTTPHandler) Create(c *gin.Context) {
 	body := BodyCreate{}
 	c.BindJSON(&body)
 
-	game, err := hdl.gamesService.Create(body.Name, body.Size, body.Bombs)
+	model := BuildRequestCreate(body)
+
+	resource, err := hdl.cloudcontrolService.Create(model)
 	if err != nil {
 		c.AbortWithStatusJSON(500, gin.H{"message": err.Error()})
 		return
 	}
 
-	c.JSON(200, BuildResponseCreate(game))
+	c.JSON(200, BuildResponseCreate(resource))
 }
