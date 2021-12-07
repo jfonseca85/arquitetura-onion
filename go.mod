@@ -1,4 +1,4 @@
-module github.com/jfonseca85/controlplaneagent
+module github.com/jfonseca85/controlplaneagent v0.0.1
 
 go 1.17
 
