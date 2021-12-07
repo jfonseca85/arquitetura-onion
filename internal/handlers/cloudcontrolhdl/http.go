@@ -2,16 +2,15 @@ package cloudcontrolhdl
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jfonseca85/controlplaneagent/internal/core/ports/cloudcontrolapi"
 )
 
 type HTTPHandler struct {
-	cloudcontrolService cloudcontrolapi.CloudControlService
+	cloudcontrolService cloudcontrolsrv.service
 }
 
-func NewHTTPHandler(cloudcontrolService cloudcontrolapi.CloudControlService) *HTTPHandler {
+func NewHTTPHandler(service cloudcontrolsrv.service) *HTTPHandler {
 	return &HTTPHandler{
-		cloudcontrolService: cloudcontrolService,
+		cloudcontrolService: service,
 	}
 }
 
