@@ -218,7 +218,7 @@ type ListRequestsOutput struct {
 	NextToken *string
 
 	// The requests that match the specified filter criteria.
-	ResourceRequestStatusSummaries []types.ProgressEvent
+	ResourceRequestStatusSummaries []ProgressEvent
 }
 
 type UpdateInput struct {
@@ -290,5 +290,5 @@ type UpdateOutput struct {
 	// RequestToken of the ProgressEvent with GetResourceRequestStatus
 	// (https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html)
 	// to return the current status of a resource operation request.
-	ProgressEvent *types.ProgressEvent
+	ProgressEvent *ProgressEvent
 }
