@@ -4,7 +4,7 @@
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 **/
-package sdk
+package cloudcontrolapi
 
 import (
 	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrol"
@@ -14,7 +14,7 @@ import (
 /**
 	Interface do port de conexão com o AWS SDK
 **/
-type CloudControlSDK interface {
+type SDK interface {
 	//Cria o recurso especificado.
 	Save(cloudcontrol.Model) (*cloudcontrol.ProgressEvent, error)
 	//Exclui o recurso especificado.

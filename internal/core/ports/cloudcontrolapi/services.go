@@ -4,7 +4,7 @@
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 **/
-package sdk
+package cloudcontrolapi
 
 import (
 	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrol"
