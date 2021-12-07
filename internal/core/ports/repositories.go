@@ -12,4 +12,5 @@ package ports
 **/
 type CloudControlSDK interface {
 	Save(domain.cloudcontrol) error
+	Delete(domain.cloudcontrol)
 }
