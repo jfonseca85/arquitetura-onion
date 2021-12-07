@@ -2,13 +2,14 @@ package cloudcontrolhdl
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/jfonseca85/controlplaneagent/internal/core/ports/cloudcontrolapi"
 )
 
 type HTTPHandler struct {
-	cloudcontrolService cloudcontrolsrv.service
+	cloudcontrolService cloudcontrolapi.SDK
 }
 
-func NewHTTPHandler(service cloudcontrolsrv.service) *HTTPHandler {
+func NewHTTPHandler(service cloudcontrolapi.SDK) *HTTPHandler {
 	return &HTTPHandler{
 		cloudcontrolService: service,
 	}
@@ -20,7 +21,7 @@ func (hdl *HTTPHandler) Create(c *gin.Context) {
 
 	model := BuildRequestCreate(body)
 
-	resource, err := hdl.cloudcontrolService.Create(model)
+	resource, err := hdl.cloudcontrolService.Save(model)
 	if err != nil {
 		c.AbortWithStatusJSON(500, gin.H{"message": err.Error()})
 		return

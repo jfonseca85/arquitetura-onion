@@ -12,15 +12,15 @@ type BodyCreate struct {
 	TypeVersionId string `json:"typeVersionId"`
 }
 
-type ResponseCreate cloudcontrol.ProgressEvent
+type ResponseCreate *cloudcontrol.ProgressEvent
 
-type RequestCreate cloudcontrol.Model
+type RequestCreate *cloudcontrol.Model
 
-func BuildResponseCreate(progressEvent cloudcontrol.ProgressEvent) ResponseCreate {
+func BuildResponseCreate(progressEvent *cloudcontrol.ProgressEvent) ResponseCreate {
 	return ResponseCreate(progressEvent)
 }
 
-func BuildRequestCreate(dto BodyCreate) RequestCreate {
+func BuildRequestCreate(dto BodyCreate) cloudcontrol.Model {
 	model := cloudcontrol.Model{
 		ClientToken:   &dto.ClientToken,
 		DesiredState:  &dto.DesiredState,
@@ -28,5 +28,5 @@ func BuildRequestCreate(dto BodyCreate) RequestCreate {
 		TypeName:      &dto.TypeName,
 		TypeVersionId: &dto.TypeVersionId,
 	}
-	return RequestCreate(model)
+	return model
 }

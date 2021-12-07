@@ -1,2 +1,3 @@
-# control-plane-agent
-control-plane-agent for hexagonal architecture
+# Control-plane-agent
+
+Control-plane-agent for hexagonal architecture

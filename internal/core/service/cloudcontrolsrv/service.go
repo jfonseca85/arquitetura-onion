@@ -6,12 +6,12 @@ import (
 )
 
 type service struct {
-	cloudControlSDK cloudcontrolapi.SDK
+	cloudControlSDK *cloudcontrolapi.SDK
 }
 
 func New(cloudControlSDK cloudcontrolapi.SDK) *service {
 	return &service{
-		cloudControlSDK: cloudControlSDK,
+		cloudControlSDK: &cloudControlSDK,
 	}
 }
 

@@ -1,9 +1,9 @@
-/**
+/*
 	Pacote que centraliza os model do cloudcontrol
 	@author: Jorge Luis
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
-**/
+*/
 package cloudcontrol
 
 import (
@@ -12,12 +12,6 @@ import (
 	"github.com/jfonseca85/controlplaneagent/internal/core/types"
 )
 
-/**
-	Domain API Cloud Control para operações de API
-	@author: Jorge Luis
-	@version: 0.0.1
-	@Documentation: https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html
-**/
 type Model struct {
 	// Structured data format representing the desired state of the resource,
 	// consisting of that resource's properties and their desired values. Cloud Control
