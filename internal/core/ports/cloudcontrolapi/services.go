@@ -1,9 +1,9 @@
-/**
+/*
 	Centralizarmos a criação das interfaces ports do control agent
 	@author: Jorge Luis
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
-**/
+*/
 package cloudcontrolapi
 
 import (
@@ -11,9 +11,6 @@ import (
 	"github.com/jfonseca85/controlplaneagent/internal/core/types"
 )
 
-/**
-	Interface do port de conexão com o AWS SDK
-**/
 type CloudControlService interface {
 	//Cria o recurso especificado.
 	Create(cloudcontrol.Model) (*cloudcontrol.ProgressEvent, error)
