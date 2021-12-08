@@ -4,7 +4,7 @@
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 */
-package cloudcontrol
+package cloudcontrolmdl
 
 import (
 	"time"

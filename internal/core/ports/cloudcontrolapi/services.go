@@ -7,33 +7,33 @@
 package cloudcontrolapi
 
 import (
-	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrol"
+	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
 	"github.com/jfonseca85/controlplaneagent/internal/core/types"
 )
 
 type CloudControlService interface {
 	//Cria o recurso especificado.
-	Create(cloudcontrol.Model) (*cloudcontrol.ProgressEvent, error)
+	Create(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
 	//Exclui o recurso especificado.
-	Delete(cloudcontrol.Model) (*cloudcontrol.ProgressEvent, error)
+	Delete(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
 	//Retorna informações sobre o estado atual do recurso especificado.
-	Get(cloudcontrol.Model) (types.ResourceDescription, error)
+	Get(cloudcontrolmdl.Model) (types.ResourceDescription, error)
 	// Returns information about the specified resources. For more information, see
 	// Discovering resources in the Amazon Web Services Cloud Control API User Guide.
 	// You can use this action to return information about existing resources in your
 	// account and Amazon Web Services Region, whether or not those resources were
 	// provisioned using Cloud Control API.
-	List(cloudcontrol.RequestList) (cloudcontrol.ProgressEvent, error)
+	List(cloudcontrolmdl.RequestList) (cloudcontrolmdl.ProgressEvent, error)
 
 	//Retorna o status atual de uma solicitação de operação de recurso.
-	GetRequestStatus(requestToken string) (cloudcontrol.ProgressEvent, error)
+	GetRequestStatus(requestToken string) (cloudcontrolmdl.ProgressEvent, error)
 	// Returns existing resource operation requests. This includes requests of all
 	// status types. For more information, see Listing active resource operation
 	// requests
 	// (https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list)
 	// in the Amazon Web Services Cloud Control API User Guide. Resource operation
 	// requests expire after seven days.
-	ListRequests(cloudcontrol.ListRequestsInput) (cloudcontrol.ListRequestsOutput, error)
+	ListRequests(cloudcontrolmdl.ListRequestsInput) (cloudcontrolmdl.ListRequestsOutput, error)
 	// Updates the specified property values in the resource. You specify your resource
 	// property updates as a list of patch operations contained in a JSON patch
 	// document that adheres to the  RFC 6902 - JavaScript Object Notation (JSON) Patch
@@ -49,5 +49,5 @@ type CloudControlService interface {
 	// topic for the resource in the Resource and property types reference
 	// (https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
 	// in the Amazon Web Services CloudFormation Users Guide.
-	Update(cloudcontrol.UpdateInput) (cloudcontrol.ListRequestsOutput, error)
+	Update(cloudcontrolmdl.UpdateInput) (cloudcontrolmdl.ListRequestsOutput, error)
 }
