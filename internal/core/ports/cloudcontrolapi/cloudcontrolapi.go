@@ -7,13 +7,11 @@ package cloudcontrolapi
 import (
 	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
 	"github.com/jfonseca85/controlplaneagent/internal/core/types"
-
-	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
 
 type SDK interface {
 	//Cria o recurso especificado.
-	Save(cloudcontrolmdl.Model) (*cloudcontrol.CreateResourceOutput, error)
+	Save(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
 	//Exclui o recurso especificado.
 	Delete(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
 	//Retorna informações sobre o estado atual do recurso especificado.

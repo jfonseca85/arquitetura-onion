@@ -27,10 +27,10 @@ func (srv *service) Create(model cloudcontrolmdl.Model) (*cloudcontrolmdl.Progre
 	}
 	client := cloudcontrol.NewFromConfig(cfg)
 	output, err := client.CreateResource(context.TODO(), cloudcontrolmdl.ToResourceInput(&model))
-	//progressEvent, err := srv.cloudControlSDK.Save(instanceAWS.ctx, model)
+	progressEvent := cloudcontrolmdl.ToProgressEvent(output)
 	if err != nil {
 		return nil, err
 	}
 
-	return output, err
+	return progressEvent, nil
 }

@@ -84,6 +84,22 @@ func ToResourceInput(model *Model) *cloudcontrol.CreateResourceInput {
 	return &result
 }
 
+func ToProgressEvent(model *cloudcontrol.CreateResourceOutput) *ProgressEvent {
+	result := ProgressEvent{
+		ErrorCode:       types.HandlerErrorCode(model.ProgressEvent.ErrorCode),
+		EventTime:       model.ProgressEvent.EventTime,
+		Identifier:      model.ProgressEvent.Identifier,
+		Operation:       types.Operation(model.ProgressEvent.Operation),
+		OperationStatus: types.OperationStatus(model.ProgressEvent.Operation),
+		RequestToken:    model.ProgressEvent.RequestToken,
+		ResourceModel:   model.ProgressEvent.ResourceModel,
+		RetryAfter:      model.ProgressEvent.RetryAfter,
+		StatusMessage:   model.ProgressEvent.StatusMessage,
+		TypeName:        model.ProgressEvent.TypeName,
+	}
+	return &result
+}
+
 /**
 	Representa o status atual da solicitação de operação do recurso.
 	Documentation: https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html
