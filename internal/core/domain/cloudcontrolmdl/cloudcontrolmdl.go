@@ -10,6 +10,8 @@ import (
 	"time"
 
 	"github.com/jfonseca85/controlplaneagent/internal/core/types"
+
+	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
 
 type Model struct {
@@ -71,6 +73,15 @@ type Model struct {
 	// If you do not specify a resource version, CloudFormation uses the default
 	// version.
 	TypeVersionId *string
+}
+
+func ToResourceInput(model *Model) *cloudcontrol.CreateResourceInput {
+	result := cloudcontrol.CreateResourceInput{
+		DesiredState: model.DesiredState,
+		TypeName:     model.TypeName,
+		ClientToken:  model.ClientToken,
+	}
+	return &result
 }
 
 /**
