@@ -1,3 +1,4 @@
+//Pacote de criação das regras de negocio do AWS SDK GO V2 service cloudcontrol
 package cloudcontrolsrv
 
 import (
@@ -5,32 +6,28 @@ import (
 	"log"
 
 	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
-	"github.com/jfonseca85/controlplaneagent/internal/core/ports/cloudcontrolapi"
 
-	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
 
-type service struct {
-	cloudControlSDK cloudcontrolapi.SDK
+type Service struct {
+	controlsdk *cloudcontrol.Client
+	//controlsdk cloudcontrolapi.SDK
 }
 
-func New() *service {
-	return &service{}
-}
-
-func (srv *service) Create(model cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error) {
-
-	cfg, err := config.LoadDefaultConfig(context.TODO(), config.WithRegion("sa-east-1"))
-	if err != nil {
-		log.Fatalf("unable to load SDK config, %v", err)
+func New(controlsdk *cloudcontrol.Client) Service {
+	return Service{
+		controlsdk: controlsdk,
 	}
-	client := cloudcontrol.NewFromConfig(cfg)
-	output, err := client.CreateResource(context.TODO(), cloudcontrolmdl.ToResourceInput(&model))
+}
+
+func (srv *Service) Create(model cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error) {
+	//Metodo que destinado para criar os recursos usando o cloudcontrol
+	log.Printf("Chamando o CreateResource>>> ", cloudcontrolmdl.ToResourceInput(&model))
+	output, err := srv.controlsdk.CreateResource(context.TODO(), cloudcontrolmdl.ToResourceInput(&model))
 	progressEvent := cloudcontrolmdl.ToProgressEvent(output)
 	if err != nil {
 		return nil, err
 	}
-
 	return progressEvent, nil
 }
