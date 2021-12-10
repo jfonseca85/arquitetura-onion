@@ -23,8 +23,8 @@ func New(controlsdk *cloudcontrol.Client) Service {
 
 func (srv *Service) Create(model cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error) {
 	//Metodo que destinado para criar os recursos usando o cloudcontrol
-	log.Printf("Chamando o CreateResource>>> ", cloudcontrolmdl.ToResourceInput(&model))
-	output, err := srv.controlsdk.CreateResource(context.TODO(), cloudcontrolmdl.ToResourceInput(&model))
+	log.Printf("Chamando o CreateResource>>> ")
+	output, err := srv.controlsdk.CreateResource(context.TODO(), cloudcontrolmdl.ToResourceInput(model))
 	progressEvent := cloudcontrolmdl.ToProgressEvent(output)
 	if err != nil {
 		return nil, err

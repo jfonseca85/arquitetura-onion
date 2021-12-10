@@ -22,11 +22,11 @@ func BuildResponseCreate(progressEvent *cloudcontrolmdl.ProgressEvent) ResponseC
 
 func BuildRequestCreate(dto BodyCreate) cloudcontrolmdl.Model {
 	model := cloudcontrolmdl.Model{
-		ClientToken:   &dto.ClientToken,
-		DesiredState:  &dto.DesiredState,
-		RoleArn:       &dto.RoleArn,
-		TypeName:      &dto.TypeName,
-		TypeVersionId: &dto.TypeVersionId,
+		ClientToken:   dto.ClientToken,
+		DesiredState:  dto.DesiredState,
+		RoleArn:       dto.RoleArn,
+		TypeName:      dto.TypeName,
+		TypeVersionId: dto.TypeVersionId,
 	}
 	return model
 }

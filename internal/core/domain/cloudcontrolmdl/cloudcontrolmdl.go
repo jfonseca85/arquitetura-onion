@@ -35,12 +35,12 @@ type Model struct {
 	// in the Amazon Web Services CloudFormation Users Guide.
 	//
 	// This member is required.
-	DesiredState *string
+	DesiredState string
 
 	// The name of the resource type.
 	//
 	// This member is required.
-	TypeName *string
+	TypeName string
 
 	// A unique identifier to ensure the idempotency of the resource request. As a best
 	// practice, specify this token to ensure idempotency, so that Amazon Web Services
@@ -53,7 +53,7 @@ type Model struct {
 	// unique
 	// (https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-idempotency)
 	// in the Amazon Web Services Cloud Control API User Guide.
-	ClientToken *string
+	ClientToken string
 
 	// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) for
 	// Cloud Control API to use when performing this resource operation. The role
@@ -67,19 +67,21 @@ type Model struct {
 	// Specifying credentials
 	// (https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations.html#resource-operations-permissions)
 	// in the Amazon Web Services Cloud Control API User Guide.
-	RoleArn *string
+	RoleArn string
 
 	// For private resource types, the type version to use in this resource operation.
 	// If you do not specify a resource version, CloudFormation uses the default
 	// version.
-	TypeVersionId *string
+	TypeVersionId string
 }
 
-func ToResourceInput(model *Model) *cloudcontrol.CreateResourceInput {
+func ToResourceInput(model Model) *cloudcontrol.CreateResourceInput {
 	result := cloudcontrol.CreateResourceInput{
-		DesiredState: model.DesiredState,
-		TypeName:     model.TypeName,
-		ClientToken:  model.ClientToken,
+		TypeName:      &(model.TypeName),
+		DesiredState:  &(model.DesiredState),
+		ClientToken:   &(model.ClientToken),
+		RoleArn:       &(model.RoleArn),
+		TypeVersionId: &(model.TypeVersionId),
 	}
 	return &result
 }
@@ -100,10 +102,6 @@ func ToProgressEvent(model *cloudcontrol.CreateResourceOutput) *ProgressEvent {
 	return &result
 }
 
-/**
-	Representa o status atual da solicitação de operação do recurso.
-	Documentation: https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html
-**/
 type ProgressEvent struct {
 	// For requests with a status of FAILED, the associated error code. For error code
 	// definitions, see Handler error codes
