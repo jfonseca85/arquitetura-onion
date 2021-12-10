@@ -77,11 +77,11 @@ type Model struct {
 
 func ToResourceInput(model Model) *cloudcontrol.CreateResourceInput {
 	result := cloudcontrol.CreateResourceInput{
-		TypeName:      &(model.TypeName),
-		DesiredState:  &(model.DesiredState),
-		ClientToken:   &(model.ClientToken),
-		RoleArn:       &(model.RoleArn),
-		TypeVersionId: &(model.TypeVersionId),
+		TypeName:     &(model.TypeName),
+		DesiredState: &(model.DesiredState),
+		//ClientToken:   &(model.ClientToken),
+		//RoleArn:       &(model.RoleArn),
+		//TypeVersionId: &(model.TypeVersionId),
 	}
 	return &result
 }
@@ -159,9 +159,6 @@ type ProgressEvent struct {
 	TypeName *string
 }
 
-/**
-	Domain que envia informações para retornar os recursos existentes na conta e região AWS
-**/
 type RequestList struct {
 
 	// The maximum number of results to be returned with a single call. If the number

@@ -3,6 +3,7 @@ package cloudcontrolhdl
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/jfonseca85/controlplaneagent/internal/core/service/cloudcontrolsrv"
+	"github.com/jfonseca85/controlplaneagent/internal/partners/builder"
 )
 
 type HTTPHandler struct {
@@ -19,7 +20,11 @@ func (hdl *HTTPHandler) Create(c *gin.Context) {
 	body := BodyCreate{}
 	c.BindJSON(&body)
 
-	model := BuildRequestCreate(body)
+	model := builder.
+		UmCloudControlModel().
+		ComDesiredState(body.DesiredState).
+		ComTypeName(body.TypeName).
+		Agora()
 
 	resource, err := hdl.cloudcontrolService.Create(model)
 
