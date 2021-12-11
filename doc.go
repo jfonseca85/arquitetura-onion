@@ -1,1 +1,1 @@
-package arquitetura-onion
+package arquiteturaonion
