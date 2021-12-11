@@ -24,10 +24,10 @@ type CloudControlService interface {
 	// You can use this action to return information about existing resources in your
 	// account and Amazon Web Services Region, whether or not those resources were
 	// provisioned using Cloud Control API.
-	//List(cloudcontrolmdl.RequestList) (cloudcontrolmdl.ProgressEvent, error)
+	List(params *cloudcontrol.ListResourcesInput) (*cloudcontrol.ListResourcesOutput, error)
 
 	//Retorna o status atual de uma solicitação de operação de recurso.
-	//GetRequestStatus(requestToken string) (cloudcontrolmdl.ProgressEvent, error)
+	GetResourceRequestStatus(params *cloudcontrol.GetResourceRequestStatusInput) (*cloudcontrol.GetResourceRequestStatusOutput, error)
 	// Returns existing resource operation requests. This includes requests of all
 	// status types. For more information, see Listing active resource operation
 	// requests
