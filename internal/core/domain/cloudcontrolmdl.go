@@ -8,8 +8,6 @@ import (
 	"time"
 
 	"github.com/jfonseca85/arquitetura-onion/internal/types"
-
-	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
 
 type CloudControlModel struct {
@@ -73,17 +71,6 @@ type CloudControlModel struct {
 	// If you do not specify a resource version, CloudFormation uses the default
 	// version.
 	TypeVersionId string
-}
-
-func ToDeleteResourceDeleteInput(model CloudControlModel) *cloudcontrol.DeleteResourceInput {
-	result := cloudcontrol.DeleteResourceInput{
-		TypeName:      &(model.TypeName),
-		Identifier:    &(model.Identifier),
-		ClientToken:   &(model.ClientToken),
-		RoleArn:       &(model.RoleArn),
-		TypeVersionId: &(model.TypeVersionId),
-	}
-	return &result
 }
 
 type ProgressEvent struct {
