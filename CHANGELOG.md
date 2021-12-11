@@ -8,7 +8,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 ### Adicionado
 
-- Estretura do projeto Arquiteturaa Onion
+- Estrutura do projeto Arquiteturaa Onion
 - Criação do port do cloudcontrol ( CreateResource)
 - Inserção da documentação do projeto
 - Inserção do Driver adapter ( http )
@@ -29,7 +29,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 ### Adicionado
 
 - Adicionando o Changelog do projeto
-- Criação do DeleteResource, GetResource
+- Criação do CRUD-L do CloudControl
 
 ### Autores
 

@@ -5,19 +5,8 @@ package cloudcontrolhdl
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jfonseca85/controlplaneagent/internal/core/services/cloudcontrolservice"
 	"github.com/jfonseca85/controlplaneagent/internal/partners/builder"
 )
-
-type HTTPHandler struct {
-	cloudcontrolService cloudcontrolservice.Service
-}
-
-func NewHTTPHandler(service cloudcontrolservice.Service) *HTTPHandler {
-	return &HTTPHandler{
-		cloudcontrolService: service,
-	}
-}
 
 func (hdl *HTTPHandler) Create(c *gin.Context) {
 	body := BodyCreate{}

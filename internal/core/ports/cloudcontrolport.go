@@ -1,9 +1,7 @@
-/*
-	Centralizamos a criação das interfaces ports do cloudcontrol
-	@author: Jorge Luis
-	@version: 0.0.1
-	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
-*/
+//	Centralizamos a criação das interfaces ports do cloudcontrol
+//	@author: Jorge Luis
+//	@version: 0.0.1
+//	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 package ports
 
 import (
@@ -27,14 +25,14 @@ type CloudControlService interface {
 	List(params *cloudcontrol.ListResourcesInput) (*cloudcontrol.ListResourcesOutput, error)
 
 	//Retorna o status atual de uma solicitação de operação de recurso.
-	GetResourceRequestStatus(params *cloudcontrol.GetResourceRequestStatusInput) (*cloudcontrol.GetResourceRequestStatusOutput, error)
+	GetStatus(params *cloudcontrol.GetResourceRequestStatusInput) (*cloudcontrol.GetResourceRequestStatusOutput, error)
 	// Returns existing resource operation requests. This includes requests of all
 	// status types. For more information, see Listing active resource operation
 	// requests
 	// (https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-list)
 	// in the Amazon Web Services Cloud Control API User Guide. Resource operation
 	// requests expire after seven days.
-	//ListRequests(cloudcontrolmdl.ListRequestsInput) (cloudcontrolmdl.ListRequestsOutput, error)
+	ListRequests(params *cloudcontrol.ListResourceRequestsInput) (*cloudcontrol.ListResourceRequestsOutput, error)
 	// Updates the specified property values in the resource. You specify your resource
 	// property updates as a list of patch operations contained in a JSON patch
 	// document that adheres to the  RFC 6902 - JavaScript Object Notation (JSON) Patch
@@ -50,5 +48,11 @@ type CloudControlService interface {
 	// topic for the resource in the Resource and property types reference
 	// (https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
 	// in the Amazon Web Services CloudFormation Users Guide.
-	//Update(cloudcontrolmdl.UpdateInput) (cloudcontrolmdl.ListRequestsOutput, error)
+	Update(params *cloudcontrol.UpdateResourceInput) (*cloudcontrol.UpdateResourceOutput, error)
+	// Cancels the specified resource operation request. For more information, see
+	// Canceling resource operation requests
+	// (https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel)
+	// in the Amazon Web Services Cloud Control API User Guide. Only resource
+	// operations requests with a status of PENDING or IN_PROGRESS can be cancelled.
+	Cancel(params *cloudcontrol.CancelResourceRequestInput) (*cloudcontrol.CancelResourceRequestOutput, error)
 }

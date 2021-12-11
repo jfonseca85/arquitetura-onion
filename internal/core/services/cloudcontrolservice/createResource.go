@@ -1,4 +1,3 @@
-//Cria resources usando o aws sdk go v2 - service cloudcontrol
 package cloudcontrolservice
 
 import (
