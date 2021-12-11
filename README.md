@@ -1,13 +1,13 @@
-# Control Plane Agent
+# Arquitetura Onion
 
-Este repositório contém o 
+Este repositório contém um exemplo de implementação da Arquitetura Onion usando Golang.
 
 
-## Sobre o Control Plane Agent
+## Sobre a Arquitetura Onion
 
-O Control Plane Agent é ??
+ A Arquitetura Onion é ??
 
-:heavy_check_mark: Mais informações sobre o argocd coorporativo em: [Jornada do Control Plane Agent](#)
+:heavy_check_mark: Mais informações sobre o  Arquitetura Onion em: [Jornada do Arquitetura Onion](#)
 
 ---
 - [Primeiros Passos](GETTINGSTARTED.md)
@@ -26,9 +26,9 @@ O Control Plane Agent é ??
 
 |	|   |
 |---	|---	|
-|**Nome do Projeto**	|Control Plane Agent   	| 
+|**Nome do Projeto**	| Arquitetura Onion   	| 
 |**Maintainer**     	|Comunidade Opensource	|
-|**Descrição**      	|App que aplica as regras de negocio do agent|
+|**Descrição**      	|App que aplica a Arquitetura Onion|
 |**Product Owner**  	|Jorge Luis Silva Fonseca     	|
 |**Contato**            |luis.engcomp@gmail.com |
 |**Página Interna**  	|#	|
@@ -36,8 +36,8 @@ O Control Plane Agent é ??
 |**Versão Terraform requerida**	|v0.0.1 | 
 
 ## Quem somos?
-Provemos uma Plataforma Agnóstica e de Alta Disponibilidade encantando as Comunidades fornecendo o Build & Run de seus produtos de forma Autônoma e Ágil. Conheça mais [nossos valores](https://sw6.pages-gitlab.prod.cloud.ihf/docs/quem-somos/valores/) em nossa [documentação oficial](#).
+Provemos uma Plataforma Agnóstica e de Alta Disponibilidade encantando as Comunidades fornecendo o Build & Run de seus produtos de forma Autônoma e Ágil. Conheça mais [nossos valores](#) em nossa [documentação oficial](#).
 
 ## Contato
 E-mail: [JL_Fonseca](luis.engcomp@gmail.com)
-GitLab Pages: #
+Github Pages: https://jfonseca85.github.io/arquitetura-onion/

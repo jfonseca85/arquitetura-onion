@@ -24,6 +24,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 - Refatoração do código fonte
 - Corrigido ordem dos resources
+- Inserção das documentações do OpenSource
 
 ### Adicionado
 
