@@ -11,7 +11,7 @@ import (
 
 	"github.com/jfonseca85/controlplaneagent/internal/types"
 
-	"github.com/aws/aws-sdk-go-v2/services/cloudcontrol"
+	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
 
 type CloudControlModel struct {
