@@ -10,6 +10,12 @@ import (
 	"github.com/jfonseca85/controlplaneagent/internal/types"
 )
 
+//Cria um recurso específico. Para mais informação de como criar um recurso
+//(https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html)
+//na Amazon Web Services Cloud Control API Guia do usuário
+//Iniciou uma solicitação de criação de recurso, você pode monitorar o progresso de seu solicitação chamando GetResourceRequestStatus
+//(https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html)
+//Usando o RequestToken do tipo ProgressEvent retornado por CreateResource.
 func (srv *Service) Create(model domain.CloudControlModel) (*domain.ProgressEvent, error) {
 	//Metodo que destinado para criar os recursos usando o cloudcontrol
 	log.Printf("Chamando o metodo cloudControlCreateResourcesrv.Create>>> ")
