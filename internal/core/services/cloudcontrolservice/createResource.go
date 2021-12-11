@@ -5,8 +5,8 @@ import (
 	"log"
 
 	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
-	"github.com/jfonseca85/controlplaneagent/internal/core/domain"
-	"github.com/jfonseca85/controlplaneagent/internal/types"
+	"github.com/jfonseca85/arquitetura-onion/internal/core/domain"
+	"github.com/jfonseca85/arquitetura-onion/internal/types"
 )
 
 //Cria um recurso específico. Para mais informação de como criar um recurso

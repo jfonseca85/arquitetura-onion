@@ -7,7 +7,7 @@ package domain
 import (
 	"time"
 
-	"github.com/jfonseca85/controlplaneagent/internal/types"
+	"github.com/jfonseca85/arquitetura-onion/internal/types"
 
 	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )

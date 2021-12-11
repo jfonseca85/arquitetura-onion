@@ -4,7 +4,7 @@
 package cloudcontrolhdl
 
 import (
-	"github.com/jfonseca85/controlplaneagent/internal/core/services/cloudcontrolservice"
+	"github.com/jfonseca85/arquitetura-onion/internal/core/services/cloudcontrolservice"
 )
 
 type HTTPHandler struct {

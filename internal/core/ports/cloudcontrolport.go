@@ -5,7 +5,7 @@
 package ports
 
 import (
-	"github.com/jfonseca85/controlplaneagent/internal/core/domain"
+	"github.com/jfonseca85/arquitetura-onion/internal/core/domain"
 
 	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )

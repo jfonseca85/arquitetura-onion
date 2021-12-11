@@ -1,6 +1,6 @@
 package builder
 
-import "github.com/jfonseca85/controlplaneagent/internal/core/domain"
+import "github.com/jfonseca85/arquitetura-onion/internal/core/domain"
 
 type newCloudControlModel struct {
 	model domain.CloudControlModel

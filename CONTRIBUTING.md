@@ -8,7 +8,7 @@ Passo-a-passo para contribuir com este código:
 
 1. Criar uma nova feature branch.
 2. Realizar as alterações desejadas.
-3. Entrar em contato com os Maintainers através de uma [Issue no GitLab](https://github.com/jfonseca85/controlplaneagent/issues.*
+3. Entrar em contato com os Maintainers através de uma [Issue no GitLab](https://github.com/jfonseca85/arquitetura-onion/issues.*
 4. Atualizar a documentação do produto caso necessário.
 5. Realizar Merge Request para a branch **develop** informando o Issue correspondente.
 6. Entrar em contato com o Maintainer para realização do code review, revisão da documentação e aprovação do Merge Request.
@@ -21,12 +21,13 @@ Confira o git-flow detalhado neste diagrama:
 ![git flow innersource](git-flow-innersource.png)
 
 ## Nossos Produtos
-- [Control Plane Agent](https://github.com/jfonseca85/controlplaneagent/issues)
+
+- [Control Plane Agent](https://github.com/jfonseca85/arquitetura-onion/issues)
 
 ## Sobre OpenSource
--
 
 ## Contatos
 
 Squad Poseidon:
-  - [JL_FONSECA](luis.engcomp@gmail.com)
+
+- [JL_FONSECA](luis.engcomp@gmail.com)

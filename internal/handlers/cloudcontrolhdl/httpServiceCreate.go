@@ -5,7 +5,7 @@ package cloudcontrolhdl
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jfonseca85/controlplaneagent/internal/partners/builder"
+	"github.com/jfonseca85/arquitetura-onion/internal/partners/builder"
 )
 
 func (hdl *HTTPHandler) Create(c *gin.Context) {

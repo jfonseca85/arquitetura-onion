@@ -1,6 +1,6 @@
-module github.com/jfonseca85/controlplaneagent
+module github.com/jfonseca85/arquitetura-onion
 
-replace github.com/jfonseca85/controlplaneagent => ../control-plane-agent
+replace github.com/jfonseca85/arquitetura-onion => ../control-plane-agent
 
 go 1.17
 

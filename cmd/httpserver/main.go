@@ -3,9 +3,9 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/jfonseca85/controlplaneagent/internal/core/services/cloudcontrolservice"
-	"github.com/jfonseca85/controlplaneagent/internal/handlers/cloudcontrolhdl"
-	"github.com/jfonseca85/controlplaneagent/internal/sdk"
+	"github.com/jfonseca85/arquitetura-onion/internal/core/services/cloudcontrolservice"
+	"github.com/jfonseca85/arquitetura-onion/internal/handlers/cloudcontrolhdl"
+	"github.com/jfonseca85/arquitetura-onion/internal/sdk"
 )
 
 func main() {
