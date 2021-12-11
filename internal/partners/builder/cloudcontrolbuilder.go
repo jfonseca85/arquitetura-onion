@@ -1,9 +1,9 @@
 package builder
 
-import "github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
+import "github.com/jfonseca85/controlplaneagent/internal/core/domain"
 
 type newCloudControlModel struct {
-	model cloudcontrolmdl.Model
+	model domain.CloudControlModel
 }
 
 func UmCloudControlModel() *newCloudControlModel {
@@ -35,6 +35,6 @@ func (c *newCloudControlModel) ComTypeVersionId(typeVersionId string) *newCloudC
 	return c
 }
 
-func (c *newCloudControlModel) Agora() cloudcontrolmdl.Model {
+func (c *newCloudControlModel) Agora() domain.CloudControlModel {
 	return c.model
 }

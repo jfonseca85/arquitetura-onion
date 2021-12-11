@@ -1,18 +1,16 @@
 /*
-	Centralizarmos a criação das interfaces ports do control agent
+	Centralizamos a criação das interfaces ports do cloudcontrol
 	@author: Jorge Luis
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 */
-package cloudcontrolapi
+package ports
 
-import (
-	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
-)
+import "github.com/jfonseca85/controlplaneagent/internal/core/domain"
 
 type CloudControlService interface {
 	//Cria o recurso especificado.
-	Create(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
+	Create(domain.CloudControlModel) (*domain.ProgressEvent, error)
 	//Exclui o recurso especificado.
 	//Delete(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
 	//Retorna informações sobre o estado atual do recurso especificado.

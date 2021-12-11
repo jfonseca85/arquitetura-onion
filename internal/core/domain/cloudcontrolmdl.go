@@ -4,7 +4,7 @@
 	@version: 0.0.1
 	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 */
-package cloudcontrolmdl
+package domain
 
 import (
 	"time"
@@ -14,7 +14,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
 
-type Model struct {
+type CloudControlModel struct {
 	// Structured data format representing the desired state of the resource,
 	// consisting of that resource's properties and their desired values. Cloud Control
 	// API currently supports JSON as a structured data format. Specify the desired
@@ -75,13 +75,13 @@ type Model struct {
 	TypeVersionId string
 }
 
-func ToResourceInput(model Model) *cloudcontrol.CreateResourceInput {
+func ToResourceInput(model CloudControlModel) *cloudcontrol.CreateResourceInput {
 	result := cloudcontrol.CreateResourceInput{
-		TypeName:     &(model.TypeName),
-		DesiredState: &(model.DesiredState),
-		//ClientToken:   &(model.ClientToken),
-		//RoleArn:       &(model.RoleArn),
-		//TypeVersionId: &(model.TypeVersionId),
+		TypeName:      &(model.TypeName),
+		DesiredState:  &(model.DesiredState),
+		ClientToken:   &(model.ClientToken),
+		RoleArn:       &(model.RoleArn),
+		TypeVersionId: &(model.TypeVersionId),
 	}
 	return &result
 }

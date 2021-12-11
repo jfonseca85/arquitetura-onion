@@ -1,7 +1,7 @@
 package cloudcontrolhdl
 
 import (
-	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
+	"github.com/jfonseca85/controlplaneagent/internal/core/domain"
 )
 
 type BodyCreate struct {
@@ -12,21 +12,10 @@ type BodyCreate struct {
 	TypeVersionId string `json:"typeVersionId"`
 }
 
-type ResponseCreate *cloudcontrolmdl.ProgressEvent
+type ResponseCreate *domain.ProgressEvent
 
-type RequestCreate *cloudcontrolmdl.Model
+type RequestCreate *domain.CloudControlModel
 
-func BuildResponseCreate(progressEvent *cloudcontrolmdl.ProgressEvent) ResponseCreate {
+func BuildResponseCreate(progressEvent *domain.ProgressEvent) ResponseCreate {
 	return ResponseCreate(progressEvent)
-}
-
-func BuildRequestCreate(dto BodyCreate) cloudcontrolmdl.Model {
-	model := cloudcontrolmdl.Model{
-		//ClientToken:   dto.ClientToken,
-		DesiredState: dto.DesiredState,
-		//RoleArn:       dto.RoleArn,
-		TypeName: dto.TypeName,
-		//TypeVersionId: dto.TypeVersionId,
-	}
-	return model
 }

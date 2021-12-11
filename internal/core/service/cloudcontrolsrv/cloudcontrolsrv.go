@@ -5,7 +5,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/jfonseca85/controlplaneagent/internal/core/domain/cloudcontrolmdl"
+	"github.com/jfonseca85/controlplaneagent/internal/core/domain"
 
 	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
@@ -21,11 +21,11 @@ func New(controlsdk *cloudcontrol.Client) Service {
 	}
 }
 
-func (srv *Service) Create(model cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error) {
+func (srv *Service) Create(model domain.CloudControlModel) (*domain.ProgressEvent, error) {
 	//Metodo que destinado para criar os recursos usando o cloudcontrol
 	log.Printf("Chamando o CreateResource>>> ")
-	output, err := srv.controlsdk.CreateResource(context.TODO(), cloudcontrolmdl.ToResourceInput(model))
-	progressEvent := cloudcontrolmdl.ToProgressEvent(output)
+	output, err := srv.controlsdk.CreateResource(context.TODO(), domain.ToResourceInput(model))
+	progressEvent := domain.ToProgressEvent(output)
 	if err != nil {
 		return nil, err
 	}

@@ -1,17 +1,17 @@
 module github.com/jfonseca85/controlplaneagent
 
-//replace github.com/jfonseca85/controlplaneagent => ../control-plane-agent
+replace github.com/jfonseca85/controlplaneagent => ../control-plane-agent
 
 go 1.17
 
 require (
+	github.com/aws/aws-sdk-go-v2 v1.11.2
 	github.com/aws/aws-sdk-go-v2/config v1.11.0
 	github.com/aws/aws-sdk-go-v2/service/cloudcontrol v1.3.2
 	github.com/gin-gonic/gin v1.7.7
 )
 
 require (
-	github.com/aws/aws-sdk-go-v2 v1.11.2 // indirect
 	github.com/aws/aws-sdk-go-v2/credentials v1.6.4 // indirect
 	github.com/aws/aws-sdk-go-v2/feature/ec2/imds v1.8.2 // indirect
 	github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.2 // indirect

@@ -4,13 +4,13 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jfonseca85/controlplaneagent/internal/core/service/cloudcontrolsrv"
 	"github.com/jfonseca85/controlplaneagent/internal/handlers/cloudcontrolhdl"
-	"github.com/jfonseca85/controlplaneagent/internal/services_sdk/cloudcontrolsdk"
+	"github.com/jfonseca85/controlplaneagent/internal/sdk"
 )
 
 func main() {
 	//criação do client
-	controlsdk := cloudcontrolsdk.NewClient()
-	controlService := cloudcontrolsrv.New(controlsdk)
+	client := sdk.NewCloudControlClient()
+	controlService := cloudcontrolsrv.New(client)
 	controlHandler := cloudcontrolhdl.NewHTTPHandler(controlService)
 	router := gin.New()
 	router.POST("/resources", controlHandler.Create)
