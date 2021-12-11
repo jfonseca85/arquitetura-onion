@@ -5,25 +5,14 @@ import (
 	"context"
 	"log"
 
+	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 	"github.com/jfonseca85/controlplaneagent/internal/core/domain"
 	"github.com/jfonseca85/controlplaneagent/internal/types"
-
-	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
 )
-
-type Service struct {
-	controlsdk *cloudcontrol.Client
-}
-
-func New(controlsdk *cloudcontrol.Client) Service {
-	return Service{
-		controlsdk: controlsdk,
-	}
-}
 
 func (srv *Service) Create(model domain.CloudControlModel) (*domain.ProgressEvent, error) {
 	//Metodo que destinado para criar os recursos usando o cloudcontrol
-	log.Printf("Chamando o CreateResource>>> ")
+	log.Printf("Chamando o metodo cloudControlCreateResourcesrv.Create>>> ")
 	output, err := srv.controlsdk.CreateResource(context.TODO(), toCreateResourceInput(model))
 	progressEvent := toCreateResourceProgressEvent(output)
 	if err != nil {
@@ -33,6 +22,8 @@ func (srv *Service) Create(model domain.CloudControlModel) (*domain.ProgressEven
 }
 
 func toCreateResourceInput(model domain.CloudControlModel) *cloudcontrol.CreateResourceInput {
+	//Realiza a conversao do CloudControlModel para CreateResourceInput
+	log.Printf("Chamando o metodo cloudControlCreateResourcesrv.toCreateResourceInput>>> ")
 	result := cloudcontrol.CreateResourceInput{
 		TypeName:      &(model.TypeName),
 		DesiredState:  &(model.DesiredState),
@@ -44,6 +35,8 @@ func toCreateResourceInput(model domain.CloudControlModel) *cloudcontrol.CreateR
 }
 
 func toCreateResourceProgressEvent(model *cloudcontrol.CreateResourceOutput) *domain.ProgressEvent {
+	//Realiza a conversao do cloudcontrol.CreateResourceOutput para domain.ProgressEvent
+	log.Printf("Chamando o metodo cloudControlCreateResourcesrv.toCreateResourceProgressEvent>>> ")
 	result := domain.ProgressEvent{
 		ErrorCode:       types.HandlerErrorCode(model.ProgressEvent.ErrorCode),
 		EventTime:       model.ProgressEvent.EventTime,
