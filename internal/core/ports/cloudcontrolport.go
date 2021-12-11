@@ -6,7 +6,11 @@
 */
 package ports
 
-import "github.com/jfonseca85/controlplaneagent/internal/core/domain"
+import (
+	"github.com/jfonseca85/controlplaneagent/internal/core/domain"
+
+	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
+)
 
 type CloudControlService interface {
 	//Cria o recurso especificado.
@@ -14,7 +18,7 @@ type CloudControlService interface {
 	//Exclui o recurso especificado.
 	Delete(domain.CloudControlModel) (*domain.ProgressEvent, error)
 	//Retorna informações sobre o estado atual do recurso especificado.
-	//Get(cloudcontrolmdl.Model) (types.ResourceDescription, error)
+	Get(domain.CloudControlModel) (*cloudcontrol.GetResourceOutput, error)
 	// Returns information about the specified resources. For more information, see
 	// Discovering resources in the Amazon Web Services Cloud Control API User Guide.
 	// You can use this action to return information about existing resources in your

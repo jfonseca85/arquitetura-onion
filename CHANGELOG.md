@@ -29,7 +29,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 ### Adicionado
 
 - Adicionando o Changelog do projeto
-- Criação do port, service, adapter do DeleteResource
+- Criação do DeleteResource, GetResource
 
 ### Autores
 
