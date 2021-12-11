@@ -1,9 +1,7 @@
-/*
-	Pacote que centraliza os model do cloudcontrol
-	@author: Jorge Luis
-	@version: 0.0.1
-	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
-*/
+//	Pacote que centraliza os model do cloudcontrol
+//	@author: Jorge Luis
+//	@version: 0.0.1
+//	@Documentation: https://github.com/aws/aws-sdk-go-v2/tree/main/service/cloudcontrol
 package domain
 
 import (
@@ -69,35 +67,21 @@ type CloudControlModel struct {
 	// in the Amazon Web Services Cloud Control API User Guide.
 	RoleArn string
 
+	Identifier string
+
 	// For private resource types, the type version to use in this resource operation.
 	// If you do not specify a resource version, CloudFormation uses the default
 	// version.
 	TypeVersionId string
 }
 
-func ToResourceInput(model CloudControlModel) *cloudcontrol.CreateResourceInput {
-	result := cloudcontrol.CreateResourceInput{
+func ToDeleteResourceDeleteInput(model CloudControlModel) *cloudcontrol.DeleteResourceInput {
+	result := cloudcontrol.DeleteResourceInput{
 		TypeName:      &(model.TypeName),
-		DesiredState:  &(model.DesiredState),
+		Identifier:    &(model.Identifier),
 		ClientToken:   &(model.ClientToken),
 		RoleArn:       &(model.RoleArn),
 		TypeVersionId: &(model.TypeVersionId),
-	}
-	return &result
-}
-
-func ToProgressEvent(model *cloudcontrol.CreateResourceOutput) *ProgressEvent {
-	result := ProgressEvent{
-		ErrorCode:       types.HandlerErrorCode(model.ProgressEvent.ErrorCode),
-		EventTime:       model.ProgressEvent.EventTime,
-		Identifier:      model.ProgressEvent.Identifier,
-		Operation:       types.Operation(model.ProgressEvent.Operation),
-		OperationStatus: types.OperationStatus(model.ProgressEvent.Operation),
-		RequestToken:    model.ProgressEvent.RequestToken,
-		ResourceModel:   model.ProgressEvent.ResourceModel,
-		RetryAfter:      model.ProgressEvent.RetryAfter,
-		StatusMessage:   model.ProgressEvent.StatusMessage,
-		TypeName:        model.ProgressEvent.TypeName,
 	}
 	return &result
 }

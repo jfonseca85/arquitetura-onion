@@ -12,7 +12,7 @@ type CloudControlService interface {
 	//Cria o recurso especificado.
 	Create(domain.CloudControlModel) (*domain.ProgressEvent, error)
 	//Exclui o recurso especificado.
-	//Delete(cloudcontrolmdl.Model) (*cloudcontrolmdl.ProgressEvent, error)
+	Delete(domain.CloudControlModel) (*domain.ProgressEvent, error)
 	//Retorna informações sobre o estado atual do recurso especificado.
 	//Get(cloudcontrolmdl.Model) (types.ResourceDescription, error)
 	// Returns information about the specified resources. For more information, see
