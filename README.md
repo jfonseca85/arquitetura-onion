@@ -36,7 +36,7 @@ Este repositório contém um exemplo de implementação da Arquitetura Onion usa
 |**Versão Terraform requerida**	|v0.0.1 | 
 
 ## Quem somos?
-Provemos uma Plataforma Agnóstica e de Alta Disponibilidade encantando as Comunidades fornecendo o Build & Run de seus produtos de forma Autônoma e Ágil. Conheça mais [nossos valores](https://sw6.pages-gitlab.prod.cloud.ihf/docs/quem-somos/valores/) em nossa [documentação oficial](#).
+Provemos uma Plataforma Agnóstica e de Alta Disponibilidade encantando as Comunidades fornecendo o Build & Run de seus produtos de forma Autônoma e Ágil. Conheça mais [nossos valores](#) em nossa [documentação oficial](#).
 
 ## Contato
 E-mail: [JL_Fonseca](luis.engcomp@gmail.com)
