@@ -9,9 +9,9 @@ package domain
 import (
 	"time"
 
-	"github.com/jfonseca85/controlplaneagent/internal/core/types"
+	"github.com/jfonseca85/controlplaneagent/internal/types"
 
-	"github.com/aws/aws-sdk-go-v2/service/cloudcontrol"
+	"github.com/aws/aws-sdk-go-v2/services/cloudcontrol"
 )
 
 type CloudControlModel struct {
