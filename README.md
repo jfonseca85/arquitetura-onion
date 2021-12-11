@@ -1,13 +1,13 @@
-# Control Plane Agent
+# Arquitetura Onion
 
-Este repositório contém o 
+Este repositório contém um exemplo de implementação da Arquitetura Onion usando Golang.
 
 
-## Sobre o Control Plane Agent
+## Sobre a Arquitetura Onion
 
-O Control Plane Agent é ??
+ A Arquitetura Onion é ??
 
-:heavy_check_mark: Mais informações sobre o argocd coorporativo em: [Jornada do Control Plane Agent](#)
+:heavy_check_mark: Mais informações sobre o  Arquitetura Onion em: [Jornada do Arquitetura Onion](#)
 
 ---
 - [Primeiros Passos](GETTINGSTARTED.md)
@@ -26,9 +26,9 @@ O Control Plane Agent é ??
 
 |	|   |
 |---	|---	|
-|**Nome do Projeto**	|Control Plane Agent   	| 
+|**Nome do Projeto**	| Arquitetura Onion   	| 
 |**Maintainer**     	|Comunidade Opensource	|
-|**Descrição**      	|App que aplica as regras de negocio do agent|
+|**Descrição**      	|App que aplica a Arquitetura Onion|
 |**Product Owner**  	|Jorge Luis Silva Fonseca     	|
 |**Contato**            |luis.engcomp@gmail.com |
 |**Página Interna**  	|#	|
