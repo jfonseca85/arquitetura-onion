@@ -4,7 +4,7 @@ Todas as mudanças importantes deste projeto serão documentadas neste arquivo.
 
 O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/), e este projeto é aderente ao [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.0.1](https://github.com/jfonseca85/arquitetura-onion/tag/v0.0.1) - 2021-12-21
+## [v0.0.1](https://github.com/jfonseca85/arquitetura-onion/tag/v0.0.1) - 2021-12-10
 
 ### Adicionado
 
@@ -18,7 +18,7 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 
 - [@jlfonseca](https://github.com/jfonseca85)
 
-## [v0.0.2](https://github.com/jfonseca85/arquitetura-onion/tag/v0.0.2) - ?????
+## [v0.1.0](https://github.com/jfonseca85/arquitetura-onion/tag/v0.0.2) - 2021-12-14
 
 ### Corrigido
 
@@ -35,4 +35,3 @@ O formato é baseado no [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.
 ### Autores
 
 - [@jlfonseca](https://github.com/jfonseca85)
-
