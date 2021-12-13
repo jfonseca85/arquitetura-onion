@@ -4,7 +4,7 @@ Este repositório contém um exemplo de implementação da Arquitetura Onion usa
 
 ## Sobre a Arquitetura Onion
 
-A Arquitetura Onion  pega as camadas DDD e as incorpora à arquitetura de Ports e Adapters. Essas camadas têm o objetivo de trazer alguma organização para a lógica de negócios, o interior do “hexágono” de Ports & Adapters, e assim como em Ports & Adapters, a direção das dependências é voltada para o Core.
+A Arquitetura Onion  pega as camadas DDD e as incorpora à Arquitetura de Hexagonal. Essas camadas têm o objetivo de trazer alguma organização para a lógica de negócios, o interior do “hexágono” de Ports & Adapters, e assim como em Ports & Adapters, a direção das dependências é voltada para o Core.
 
 :heavy_check_mark: Mais informações sobre o  Arquitetura Onion em: [Jornada do Arquitetura Onion](#)
 
