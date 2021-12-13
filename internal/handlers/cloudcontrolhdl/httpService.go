@@ -9,6 +9,7 @@ import (
 
 type HTTPHandler struct {
 	//dependencyInjection
+	//TO DO: Passar a interface do port e diminuir o acoplamento
 	cloudcontrolService cloudcontrolservice.Service
 }
 
