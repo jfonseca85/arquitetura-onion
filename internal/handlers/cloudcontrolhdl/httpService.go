@@ -8,6 +8,7 @@ import (
 )
 
 type HTTPHandler struct {
+	//dependencyInjection
 	cloudcontrolService cloudcontrolservice.Service
 }
 
