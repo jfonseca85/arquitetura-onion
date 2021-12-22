@@ -8,5 +8,5 @@ Sua contribuição é de extrema valia para nós, e você pode encontrar aqui ma
 Confira aqui [nosso backlog](#) em andamento.
 
 Você pode relatar bugs e solicitações de recursos para a squad Poseidon em nossos canais:
-- [JL_FONSECA](luis.engcomp@gmail.com)
+- [JL_FONSECA](jfonseca85)
 - [Repo Issues arquitetura-onion](https://github.com/jfonseca85/arquitetura-onion/issues)
