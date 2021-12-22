@@ -20,14 +20,7 @@ Com essa alteração aprovada, será gerada uma **nova tag** para disponibiliza�
 Confira o git-flow detalhado neste diagrama:
 ![git flow innersource](git-flow-innersource.png)
 
-## Nossos Produtos
 
 - [Control Plane Agent](https://github.com/jfonseca85/arquitetura-onion/issues)
 
-## Sobre OpenSource
 
-## Contatos
-
-Squad Poseidon:
-
-- [JL_FONSECA](luis.engcomp@gmail.com)
