@@ -11,6 +11,7 @@ type HTTPHandler struct {
 	cloudcontrolService cloudcontrolservice.Service
 }
 
+
 func NewHTTPHandler(service cloudcontrolservice.Service) *HTTPHandler {
 	return &HTTPHandler{
 		cloudcontrolService: service,
